@@ -4,7 +4,7 @@ import cv2
 net = cv2.dnn.readNetFromCaffe("Models/deploy.prototxt", "Models/res10_300x300_ssd_iter_140000_fp16.caffemodel")
 # load the input image and construct an input blob for the image
 # by resizing to a fixed 300x300 pixels and then normalizing it
-image = cv2.imread("Photos/image.jpg")
+image = cv2.imread("Photos/image1.jpg")
 (h, w) = image.shape[:2]
 blob = cv2.dnn.blobFromImage(cv2.resize(image, (300, 300)), 1.0, (300, 300), (104.0, 177.0, 123.0))
 
@@ -27,12 +27,12 @@ for i in range(0, detections.shape[2]):
  
 		# draw the bounding box of the face along with the associated
 		# probability
-		cv2.rectangle(image, (startX, startY), (endX, endY), (0, 255, 0), 1)
+		cv2.rectangle(image, (startX, startY), (endX, endY), (0, 255, 0), 2)
 		text = "{:.2f}%".format(confidence * 100)
 		cv2.rectangle(image, (startX, startY), ( endX, startY + 20), (0, 255, 0), cv2.FILLED)
 		cv2.putText(image, text, (startX, startY + 15), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 1)
 # show the output image
-cv2.imshow("Output", image)
+cv2.imshow("detection_deep_learnong", image)
 cv2.waitKey(0)
 
 

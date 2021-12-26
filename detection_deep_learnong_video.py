@@ -35,7 +35,7 @@ while True:
 		cv2.putText(frame, text, (startX, startY + 15), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 1)
 	
 	# show the output frame
-	cv2.imshow('Video', frame)
+	cv2.imshow('detection_deep_learnong_video', frame)
   
 	if cv2.waitKey(1) & 0xFF == ord('q'):
 		break

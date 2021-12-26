@@ -4,7 +4,7 @@ import cv2
 #Load the lbpcascade file
 cascPath = "Models/lbpcascade_frontalface.xml"
 
-img = cv2.imread('Photos/image2.jpg')
+img = cv2.imread('Photos/image1.jpg')
   
 # Converting image to grayscale
 gray_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
@@ -22,7 +22,7 @@ faces, rejectLevels, levelWeights = haar_cascade.detectMultiScale3(gray_img,
 
 # Iterating through rectangles of detected faces
 for (x, y, w, h) in faces:
-    cv2.rectangle(img, (x, y), (x+w, y+h), (0, 255, 0), 1)
+    cv2.rectangle(img, (x, y), (x+w, y+h), (0, 255, 0), 2)
   
 #Display image
 def display(img, frameName="lbpcascade_frontalface"):

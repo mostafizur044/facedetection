@@ -5,7 +5,7 @@ cascPath = "Models/haarcascade_frontalface_default.xml"
 
 # For Image 
 
-img = cv2.imread('Photos/image4.jpg')
+img = cv2.imread('Photos/image1.jpg')
   
 # Converting image to grayscale
 gray_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
@@ -23,7 +23,7 @@ faces, rejectLevels, levelWeights = haar_cascade.detectMultiScale3(gray_img,
 
 # Iterating through rectangles of detected faces
 for (x, y, w, h) in faces:
-    cv2.rectangle(img, (x, y), (x+w, y+h), (0, 255, 0), 1)
+    cv2.rectangle(img, (x, y), (x+w, y+h), (0, 255, 0), 2)
   
 def display(img, frameName="haarcascade_frontalface_default"):
     h, w = img.shape[0:2]
